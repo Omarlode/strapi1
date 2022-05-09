@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(80, 77, 77);
+}
+.btn2 {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: aqua;
+  transition: 0.3s;
+  height: auto;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
