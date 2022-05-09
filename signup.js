@@ -1,3 +1,8 @@
+const input = document.getElementById("input");
+const result = document.getElementById("result");
+input.oninput = function () {
+  result.value = input.value;
+};
 const form = document.getElementById("container");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -30,6 +35,7 @@ async function sendData(form) {
     console.log(error);
   }
 }
+
 function getData(data) {
   //console.log(data.jwt);
 
