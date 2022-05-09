@@ -50,3 +50,9 @@ function sendData() {
 
   window.location.href = "login.html";
 }
+function checkToken() {
+  if (isTokenExpired()) {
+    window.location.href = "login.html";
+  }
+}
+checkToken();

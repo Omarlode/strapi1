@@ -50,3 +50,9 @@ function getData(data) {
 
   window.location.href = "index.html";
 }
+function checkToken() {
+  if (!isTokenExpired()) {
+    window.location.href = "index.html";
+  }
+}
+checkToken();

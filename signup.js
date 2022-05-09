@@ -36,6 +36,13 @@ async function sendData(form) {
   }
 }
 
+function checkToken() {
+  if (!isTokenExpired()) {
+    window.location.href = "index.html";
+  }
+}
+checkToken();
+
 function getData(data) {
   //console.log(data.jwt);
 
