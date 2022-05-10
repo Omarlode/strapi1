@@ -16,8 +16,13 @@ async function onRequest() {
     });
 
     if (!response.ok) {
-      const message = `Error: ${response.status}`;
-      throw new Error(message);
+      if (response.status == 401) {
+        logout();
+        return;
+      } else {
+        const message = `Error: ${response.status}`;
+        throw new Error(message);
+      }
     }
     const data = await response.json();
     printData(data);
@@ -46,13 +51,17 @@ borrar.addEventListener("click", () => {
 });
 
 function sendData() {
+  logout();
+}
+function checkToken() {
+  if (isTokenExpired()) {
+    logout();
+  }
+}
+checkToken();
+
+function logout() {
   localStorage.removeItem("jwt");
 
   window.location.href = "login.html";
 }
-function checkToken() {
-  if (isTokenExpired()) {
-    window.location.href = "login.html";
-  }
-}
-checkToken();
